@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--http://testng.org/doc/documentation-main.html#annotations-->
+
+<suite name="loginTest" verbose="1" configfailurepolicy="continue">
+    <test name="Testing Parameterization" preserve-order="true">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="username" value="testuser"/>
+        <parameter name="password" value="testpassword"/>
+        <parameter name="website" value="http://172.16.62.26/#/"/>
+        <classes>
+            <!-- Base functionality tests -->
+            <class name="BeehiveTest.TestParameters">
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+

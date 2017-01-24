@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!--http://testng.org/doc/documentation-main.html#annotations-->
+
+<suite name="FTT 1.02 Test Login" verbose="1" configfailurepolicy="continue">
+    <test name="Test login" preserve-order="true">
+        <parameter name="username" value="testLogin"/>
+        <parameter name="password" value="Hoi"/>
+        <parameter name="website" value="http://172.16.62.26/#/"/>
+        <parameter name="badUsername" value="badUsername"/>
+        <parameter name="badPassword" value="badPassword"/>
+        <classes>
+            <!-- Base functionality tests -->
+            <class name="BeehiveTest.loginTest">
+                <methods>
+                    <include name="testLoginParam"/>
+                    <include name="testSessionLoginNameToUsernameParameter"/>
+                    <include name="shouldGiveErrorOnIncorrectPassword"/>
+                    <include name="shouldGiveErrorOnNotExistingUsername"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
