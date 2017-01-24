@@ -9,6 +9,7 @@ import static junit.framework.Assert.assertTrue;
 
 public class ChromeTest {
 
+    /* Created by Kristof vandewearde */
     private WebDriver driver;
 
     @BeforeClass
