@@ -40,7 +40,6 @@ public class loginTest
         options.addArguments("--disable-extensions");
         //this.driver = new HtmlUnitDriver();
         driver = new ChromeDriver(options);
-
     }
     @Ignore
     @Parameters({ "username", "password","website" })
@@ -62,7 +61,7 @@ public class loginTest
         getTitle();
         //Find the webelement that signals we are logged in
         WebElement alert = driver.findElement(By.cssSelector("div[ng-if='lc.isLogin == true']"));
-        //Test if the element is not null, or exists
+        //TestSuite if the element is not null, or exists
         Assert.assertNotEquals(alert,null);
         //Wait
 
@@ -78,7 +77,7 @@ public class loginTest
         //Get info from sessions
         System.out.println(username + " en password " + password);
         //System.out.println("Pagesource -> " +driver.getPageSource());
-        //Test if the username from the session is the same as the username to log in
+        //TestSuite if the username from the session is the same as the username to log in
         Assert.assertEquals(username,userSession);
         //System.out.println("URL of the page is -> " +driver.getCurrentUrl());
         //Assert.assertTrue(driver.getCurrentUrl().equals("http://172.16.62.26/#/dashboard"));
@@ -123,7 +122,7 @@ public class loginTest
         driver.get(website);
         //<input type="button" class="btn btn-danger" ng-click="lc.logout()" value="Logout">
         driver.findElement(By.cssSelector("input[ng-click='lc.logout()']")).click();
-        //Test that we are not logged in anymore
+        //TestSuite that we are not logged in anymore
         Assert.assertFalse(driver.getPageSource().contains("Welcome"));
     }
     @Parameters({ "badUsername", "badPassword","website" })
@@ -139,10 +138,10 @@ public class loginTest
         driver.findElement(By.cssSelector("input[ng-click='lc.login(user)']")).click();
         //Wait
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        //Test if there is an error, as the login should fail
+        //TestSuite if there is an error, as the login should fail
         WebElement alert = driver.findElement(By.cssSelector("label[ng-if='lc.error == 1']"));
         Assert.assertNotEquals(alert,null);
-        //Test if there is a user in the session
+        //TestSuite if there is a user in the session
         SessionStorage ss = new SessionStorage(driver);
         String username = ss.getItemFromSessionStorage("username");
         String pass = ss.getItemFromSessionStorage("password");
@@ -161,7 +160,7 @@ public class loginTest
         driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
     }
     @Parameters({ "badUsername", "badPassword","website" })
-    @Test(description = "Test if we can login to the site without valid credentials")
+    @Test(description = "TestSuite if we can login to the site without valid credentials")
     public void hackTheSite(String badUsername, String badPassword, String website)
     {
         driver.get(website);

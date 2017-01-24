@@ -3,19 +3,18 @@
 
 <suite name="FTT 1.02 Test Login" verbose="1" configfailurepolicy="continue">
     <test name="Test login" preserve-order="true">
-        <parameter name="username" value="testLogin"/>
-        <parameter name="password" value="Hoi"/>
+        <parameter name="username" value="random"/>
+        <parameter name="password" value="y$lo"/>
         <parameter name="website" value="http://172.16.62.26/#/"/>
         <parameter name="badUsername" value="badUsername"/>
         <parameter name="badPassword" value="badPassword"/>
         <classes>
             <!-- Base functionality tests -->
-            <class name="BeehiveTest.loginTest">
+            <class name="POMTest.TestSuite">
                 <methods>
-                    <include name="testLoginParam"/>
-                    <!--include name="testSessionLoginNameToUsernameParameter"/>
+                    <include name="testIfCanLogin"/>
                     <include name="shouldGiveErrorOnIncorrectPassword"/>
-                    <include name="shouldGiveErrorOnNotExistingUsername"/-->
+                    <include name="shouldGiveErrorOnNotExistingUsername"/>
                 </methods>
             </class>
         </classes>
