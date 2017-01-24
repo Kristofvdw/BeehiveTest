@@ -42,6 +42,7 @@ public class loginTest
         driver = new ChromeDriver(options);
 
     }
+    @Ignore
     @Parameters({ "username", "password","website" })
     @Test
     public void testLoginParam(String username, String password,String website)

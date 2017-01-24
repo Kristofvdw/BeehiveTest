@@ -67,7 +67,7 @@ public class registerTest
         driver.findElement(By.id("postcodeinput")).sendKeys("3600");
         driver.findElement(By.id("mobileinput")).sendKeys("0479648234");
         driver.findElement(By.id("emailinput")).sendKeys("kristof@mail.be");
-        driver.findElement(By.id("submitbutton")).click();
+        //driver.findElement(By.id("submitbutton")).click();
     }
     private void getTitle()
     {
@@ -126,6 +126,6 @@ public class registerTest
     @AfterClass
     public static void tearDown()
     {
-        driver.close();
+        //driver.close();
     }
 }

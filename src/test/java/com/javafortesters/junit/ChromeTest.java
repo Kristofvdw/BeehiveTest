@@ -27,7 +27,6 @@ public class ChromeTest {
             driver.quit();
         }
     }
-
     @Test
     public void test() {
         driver.get("http://172.16.62.26/#/");
