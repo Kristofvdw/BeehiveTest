@@ -18,7 +18,6 @@
           <include name="testIfCanLogin" invocation-numbers="0"/>
           <include name="setupClass"/>
           <include name="teardown"/>
-          <include name="shouldGiveErrorOnIncorrectPassword"/>
           <include name="setupTest"/>
         </methods>
       </class> <!-- POMTest.TestSuite -->

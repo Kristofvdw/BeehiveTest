@@ -53,7 +53,7 @@ public class TestSuite
     public void shouldGiveErrorOnIncorrectPassword(String username, String password)
     {
         objLogin = new loginHeader(driver);
-        System.out.println("Testing login for user " + username + " with password " + password);
+        System.out.println("Testing bad login for user " + username + " with password " + password);
         objLogin.goToSite();
         assertTrue(objLogin.getTitle().startsWith("B-Central"));
         objLogin.setLogin(username);
@@ -67,7 +67,6 @@ public class TestSuite
     {
 
     }
-
     @AfterClass
     public void teardown() {
         if (driver != null) {

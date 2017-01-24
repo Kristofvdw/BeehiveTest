@@ -31,13 +31,17 @@ public class loginHeader extends BCentral
     }
     public boolean isLogin()
     {
-        By by = By.cssSelector("div[ng-if='lc.isLogin == true']");
-        Boolean isPresent = driver.findElements(by).size() > 0;
+
+        if(driver.findElement(By.className("Button")).getAttribute("value") == "Logout") {return true;}
+        else {return false;}
+        //By by = By.cssSelector("div[ng-if='lc.isLogin == true']");
+        //return driver.findElements(by).size() > 0;
+        /*Boolean isPresent = driver.findElements(by).size() > 0;
         if(isPresent)
         {
             return true;
         }
-        else {return false;}
+        else {return false;}*/
     }
     public void errorElement(String field)
     {
